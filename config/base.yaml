@@ -1,4 +1,5 @@
 application:
   address: :8080
+  rpcAddress: :8081
 dbConfig:
   url: my.db

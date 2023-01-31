@@ -9,7 +9,8 @@ import (
 
 // ApplicationConfig ...
 type ApplicationConfig struct {
-	Address string `yaml:"address"`
+	Address    string `yaml:"address"`
+	RpcAddress string `yaml:"rpcAddress"`
 }
 type dbConfig struct {
 	URL string `yaml:"url"`

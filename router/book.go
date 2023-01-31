@@ -12,7 +12,7 @@ type bookModule struct {
 	*server.Server
 }
 
-func New(server *server.Server) *bookModule {
+func newBookModule(server *server.Server) *bookModule {
 	book := bookModule{server}
 	book.setupRoutes()
 	return &book
@@ -60,5 +60,5 @@ func (b *bookModule) DeleteBook(c *fiber.Ctx) error {
 }
 
 var BookModule = fx.Options(
-	fx.Invoke(New),
+	fx.Invoke(newBookModule),
 )

@@ -10,3 +10,11 @@ Content-Type: application/json
   "author":"JUKhan",
   "rating":5
 }
+
+###
+
+GET http://127.0.0.1:8080/add/3/4
+
+###
+
+GET http://127.0.0.1:8080/mult/3/4
