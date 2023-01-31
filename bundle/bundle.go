@@ -22,6 +22,7 @@ func registerHooks(
 	server *server.Server,
 	addService rpc.AddService,
 	logger *zap.SugaredLogger,
+	conn *rpc.Connector,
 ) {
 
 	lifecycle.Append(
@@ -50,6 +51,7 @@ func registerHooks(
 				return nil
 			},
 			OnStop: func(context.Context) error {
+				conn.Conn.Close()
 				return server.Logger.Sync()
 			},
 		},
